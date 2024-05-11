@@ -10,11 +10,23 @@ function App() {
       </header>
       <footer>
         Project by{" "}
-        <a href="https://www.shecodes.io/graduates/102970-karen-felipe">
+        <a
+          href="https://www.shecodes.io/graduates/102970-karen-felipe"
+          target="blank"
+        >
           Karen Felipe
         </a>
-        , open sourced on <a href="">Github</a> and hosted on{" "}
-        <a href="">Netlify</a>
+        , open sourced on{" "}
+        <a
+          href="https://github.com/KengMagee/codesandbox-react-weather-app"
+          target="blank"
+        >
+          Github
+        </a>{" "}
+        and hosted on{" "}
+        <a href="/" target="blank">
+          Netlify
+        </a>
       </footer>
     </div>
   );

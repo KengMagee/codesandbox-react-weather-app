@@ -6,19 +6,19 @@ import axios from "axios";
 export default function Weather() {
   let [city, setCity] = useState("");
   let [message, setMessage] = useState("");
-  let [weather, setWeather] = useState("");
-  let apiKey = "f0e04696ccdobt2cada9106542efcc36";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
-  axios.get(apiUrl).then(handleResponse);
+  let [metric, setMetric] = useState("");
+  let [weather, setWeather] = useState({});
 
-  function handleResponse(response) {
-    return response.data.main.temperature;
+  function displayTemperature(response) {
+    setWeather({ temperature: Math.round(response.data.main.temp) });
   }
 
   function handleSubmit(event) {
     event.preventDefault();
     setMessage(`The weather in ${city} is`);
-    setWeather(`${response.data.temperature}`);
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=de2c40e370d58e257faf07ba4ea95840&units=metric`;
+    axios.get(apiUrl).then(displayTemperature);
+    setMetric(`°C`);
   }
 
   function updateCity(event) {
@@ -32,7 +32,8 @@ export default function Weather() {
         <input type="submit" value="Search" />
       </form>
       <h2>
-        {message} {weather}
+        {message} {weather.temperature}
+        {metric}
       </h2>
     </div>
   );

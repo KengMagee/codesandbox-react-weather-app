@@ -8,7 +8,7 @@ function App() {
         <h1>Weather Search Engine</h1>
         <Weather />
       </header>
-      <footer>
+      <p>
         Project by{" "}
         <a
           href="https://www.shecodes.io/graduates/102970-karen-felipe"
@@ -27,7 +27,7 @@ function App() {
         <a href="/" target="blank">
           Netlify
         </a>
-      </footer>
+      </p>
     </div>
   );
 }
